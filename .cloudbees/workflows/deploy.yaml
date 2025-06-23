@@ -24,6 +24,7 @@ on:
       environment:
         type: string
         required: true
+        default: micro-hacker
       url:
         type: string
         required: false
@@ -35,7 +36,7 @@ env:
   APP_NAME: microhacker-api
 jobs:
   deploy:
-    environment: micro-hacker
+    environment: ${{ inputs.environment }}
     steps:
       - name: Checkout
         uses: cloudbees-io/checkout@v1
