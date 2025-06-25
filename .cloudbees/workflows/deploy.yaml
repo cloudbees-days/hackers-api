@@ -64,6 +64,7 @@ jobs:
         with:
           name: ${{ secrets.DOCKERHUB_USER }}/hackers-api
           version: ${{ inputs.artifactVersion }}
+          digest: ${{ inputs.digest }}
           url: "${{ secrets.DOCKERHUB_USER }}/hackers-api:${{ inputs.artifactVersion }}"
           target-environment: micro-hacker
       - name: Publish evidence
