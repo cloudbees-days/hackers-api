@@ -74,6 +74,6 @@ jobs:
         with:
           content: |-
             ## Deployed environment
-            [Dev frontend](https://microhacker-api.preview.cb-demos.io/)
+            [Dev frontend](https://microhacker.preview.cb-demos.io/)
             Running hackers-api:${{ inputs.artifactVersion }}
           format: MARKDOWN
