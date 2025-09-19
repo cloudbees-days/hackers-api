@@ -29,13 +29,12 @@ pipeline {
                     args:
                     - infinity
                   - name: grype
-                    image: anchore/grype:latest
+                    image: alpine:latest
                     tty: true
                     command:
-                    - tail
+                    - sleep
                     args:
-                    - -f
-                    - /dev/null
+                    - infinity
             '''
         }
     }
@@ -110,6 +109,11 @@ pipeline {
                     steps {
                         container('grype') {
                             sh '''
+                                # Install Grype in Alpine container
+                                apk add --no-cache curl
+                                curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+
+                                # Run scans
                                 grype docker-archive:container-image.tar -o sarif > grype-results.sarif
                                 grype docker-archive:container-image.tar -o table
                             '''
