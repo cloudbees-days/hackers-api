@@ -32,9 +32,10 @@ pipeline {
                     image: anchore/grype:latest
                     tty: true
                     command:
-                    - sleep
+                    - tail
                     args:
-                    - infinity
+                    - -f
+                    - /dev/null
             '''
         }
     }
