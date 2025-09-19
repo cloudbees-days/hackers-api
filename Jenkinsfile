@@ -61,7 +61,7 @@ pipeline {
                         go install github.com/swaggo/swag/cmd/swag@latest
                         swag init
                         go test -coverprofile=coverage.out -v ./...
-                        go build
+                        go build -buildvcs=false
                     '''
                 }
             }
