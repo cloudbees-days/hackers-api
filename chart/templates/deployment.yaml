@@ -14,8 +14,6 @@ spec:
       labels:
         app: hackers-api
     spec:
-      imagePullSecrets:
-        - name: ecr-registry
       containers:
         - name: hackers-api
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

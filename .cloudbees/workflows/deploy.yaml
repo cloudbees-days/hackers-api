@@ -49,7 +49,7 @@ jobs:
           namespace: ${{ vars.namespace }}
           values: |
             image:
-              repository: 268150017804.dkr.ecr.us-east-1.amazonaws.com/hackers-app/hackers-api
+              repository: ${{ secrets.DOCKERHUB_USER }}/hackers-api
               tag: ${{ inputs.artifactVersion }}
             hostname: hackers-api.${{ inputs.environment }}.preview.cb-demos.io
       - name: Register deployed artifact
