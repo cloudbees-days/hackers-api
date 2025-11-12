@@ -2,8 +2,6 @@
 
 A Go-based REST API that mirrors Hacker News content, providing endpoints for top stories, Show HN, and Ask HN posts. Built with Gin and featuring Swagger documentation.
 
-
-
 ## Features
 
 - 🚀 Fast and efficient API responses
